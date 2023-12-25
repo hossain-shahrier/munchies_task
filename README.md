@@ -41,5 +41,5 @@ munchies-task.vercel.app
 
 ![App Screenshot](screencapture-localhost-3000-2023-12-26-04_24_31.png)
 ![App Screenshot](screencapture-localhost-3000-2023-12-26-04_24_50.png)
-![App Screenshot](https://ibb.co/VB1p7XD)
+![App Screenshot](screencapture-localhost-3000-products-2023-12-26-04_25_30.png)
 ![App Screenshot](https://ibb.co/7jT08hV)
