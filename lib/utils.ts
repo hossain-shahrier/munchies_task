@@ -20,12 +20,11 @@ export const perks = [
     name: 'Guaranteed Quality',
     Icon: ShoppingBag,
     description:
-      'Every asset on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
+      'Every product on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
   },
   {
     name: '24x7 Customer Support',
     Icon: Phone,
-    description:
-      "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
+    description: 'Need help? We are always here to support you',
   },
 ];
