@@ -37,9 +37,9 @@ const SearchComponent: React.FC<SearchComponentProps> = ({ products }) => {
         onChange={handleSearchChange}
       />
       <div>
-        <div className="absolute top-10 z-[100]">
+        <div className="absolute top-10 right-0 z-[100]">
           {results.length > 0 && (
-            <div className="mt-1 shadow-md">
+            <div className="mt-1 shadow-md ">
               <div className="space-y-4 overflow-y-scroll rounded-lg p-5 bg-gray-100 border no-scrollbar flex flex-col max-w-80 max-h-80 ">
                 {results.map((product) => (
                   <div

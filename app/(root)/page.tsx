@@ -4,12 +4,11 @@ import Link from 'next/link';
 import getProducts from '@/lib/get-products';
 import ProductSlider from '@/components/product-slider';
 
-
 const Home = async () => {
   const products = await getProducts();
 
   return (
-    <div className="flex flex-col space-y-10">
+    <div className="flex flex-col space-y-10 py-20">
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -32,7 +31,6 @@ const Home = async () => {
       <section>
         <ProductSlider title="Products" products={products} />
       </section>
-
     </div>
   );
 };

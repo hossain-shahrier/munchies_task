@@ -17,15 +17,17 @@ const Header = async () => {
     <div className="bg-white z-50 top-0 inset-x-0 h-16 ">
       <header className=" bg-white">
         <MaxWidthWrapper>
-          <div className="border-b border-gray-200 relative">
-            <div className="flex w-full h-16 items-center justify-between">
+          <div className="border-b border-gray-200 relative ">
+            <div className="flex gap-4 w-full h-16 items-center justify-between">
               <Link href="/">
-                <div className="text-rose-600 ml-4 space-x-2 flex items-center lg:ml-0">
+                <div className="text-rose-600  space-x-2 flex items-center lg:ml-0">
                   <Map className="h-10 w-10" />
-                  <span className="text-2xl font-bold">Crunchies</span>
+                  <span className="hidden md:flex text-2xl font-bold">
+                    Crunchies
+                  </span>
                 </div>
               </Link>
-              <div className="flex items-center gap-x-4 ">
+              <div className="flex items-center gap-x-2 md:gap-x-4 ">
                 <Button
                   variant="secondary"
                   onClick={() => router.push('/products')}
