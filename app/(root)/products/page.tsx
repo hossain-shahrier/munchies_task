@@ -6,6 +6,7 @@ import { perks } from '@/lib/utils';
 import React from 'react';
 
 const ProductList = async () => {
+  // getProducts function used to fetch data from API
   const products = await getProducts();
 
   return (
@@ -20,7 +21,6 @@ const ProductList = async () => {
           </div>
         </div>
       </MaxWidthWrapper>
-      <Featured perks={perks} />
     </div>
   );
 };

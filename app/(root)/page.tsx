@@ -1,11 +1,9 @@
 import MaxWidthWrapper from '@/components/max-width-wrapper';
 import { buttonVariants } from '@/components/ui/button';
-import { Truck, ShoppingBag, Phone } from 'lucide-react';
 import Link from 'next/link';
 import getProducts from '@/lib/get-products';
 import ProductSlider from '@/components/product-slider';
-import Featured from '@/components/featured';
-import { perks } from '@/lib/utils';
+
 
 const Home = async () => {
   const products = await getProducts();
@@ -30,10 +28,11 @@ const Home = async () => {
           </div>
         </div>
       </MaxWidthWrapper>
+      {/* Slider component */}
       <section>
         <ProductSlider title="Products" products={products} />
       </section>
-      <Featured perks={perks} />
+
     </div>
   );
 };

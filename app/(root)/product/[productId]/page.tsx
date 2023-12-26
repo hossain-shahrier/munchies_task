@@ -7,6 +7,7 @@ import getProducts from '@/lib/get-products';
 import { perks } from '@/lib/utils';
 import Image from 'next/image';
 
+// Typescript ProductPageProps
 interface ProductPageProps {
   params: {
     productId: string;
@@ -36,7 +37,6 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
           <hr className="my-10" />
         </div>
       </MaxWidthWrapper>
-      <Featured perks={perks} />
     </>
   );
 };

@@ -6,19 +6,23 @@ import Image from 'next/image';
 import Currency from './currency';
 import { Product } from '@/types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface ProductSliderProps {
   title: string;
   products: Product[];
 }
 const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleClickLeft = () => {
+    // Move slide to left
     setCurrentSlide((oldSlide) => Math.max(oldSlide - 1, 0));
   };
 
   const handleClickRight = () => {
+    // Move slide to right
     setCurrentSlide((oldSlide) => Math.min(oldSlide + 1, products.length - 1));
   };
 
@@ -26,22 +30,26 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
     <MaxWidthWrapper>
       <div className="space-y-4 w-full">
         <div className="flex items-center justify-between">
-          <h3 className="font-bold text-3xl">Products</h3>
+          <h3 className="font-bold text-3xl">{title}</h3>
           <Link href="/products">
             <span className="text-rose-600">See all</span>
           </Link>
         </div>
         <div className="w-full m-auto relative border border-gray-200 bg-gray-100 p-4 rounded-xl">
           <div
-            className="rounded-2xl duration-500 flex space-x-4 overflow-x-hidden"
+            className="rounded-2xl h-full duration-500 flex space-x-4 overflow-x-hidden"
             style={{ userSelect: 'none' }}
           >
             {products.map((product, index) => (
               <div
-                key={product.id}
+                key={index}
+                onClick={() => {
+                  router.push(`/product/${product.id}`);
+                }}
                 className={`bg-white group cursor-pointer rounded-xl border p-5 space-y-4 transform transition-all duration-700 ease-in-out ${
                   index === currentSlide ? 'scale-105' : ''
                 } w-full md:min-w-[60%] lg:min-w-[40%]`}
+                // Slider functionality
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 <div className="aspect-square w-full h-[356px] rounded-xl bg-gray-100 relative">
@@ -49,6 +57,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
                     src={product?.image}
                     alt="Image"
                     fill
+                    sizes=""
                     className="aspect-square object-cover rounded-md"
                     style={{ userSelect: 'none' }}
                   />
